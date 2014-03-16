@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" media="all" href="./dst/pixel-tip.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type='text/javascript' src="./dst/pixel-tip.js"></script>
+<script type='text/javascript'>
+$(function() {
+  var tips = [];
+  $('img').each(function(_, img) {
+    var $img = $(img);
+    var tip = new PixelTip($img.attr('src'));
+    tips.push(tip);
+    $img.hover(function() {
+      var pos = $img.offset();
+      $.each(tips, function(_, v) { v.hide(); });
+      tip.show(pos.left-10, pos.top-10);
+    }, null);
+  });
+});
+</script>
+</head>
+
+<body>
+<div>
+<img src="http://manaten.net/wp-content/uploads/2013/05/cafe.gif" alt="cafe" width="200" height="150" class="aligncenter size-full wp-image-425" />
+
+<img src="http://manaten.net/wp-content/uploads/2012/12/alice.gif" alt="alice" width="150" height="150" class="alignnone size-full wp-image-88" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/august_20111122.gif" alt="august_20111122" width="150" height="150" class="size-full wp-image-222" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/hina_20120303.gif" alt="hina_20120303" width="150" height="150" class="size-full wp-image-223" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/yuka_yuyu_20120211.gif" alt="yuka_yuyu_20120211" width="170" height="180" class="alignnone size-full wp-image-224" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/yomi_20120201.gif" alt="yomi_20120201" width="150" height="150" class="alignnone size-full wp-image-225" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/aki_20110605.gif" alt="aki_20110605" width="128" height="128" class="alignnone size-full wp-image-226" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/alice_20110611.gif" alt="alice_20110611" width="128" height="128" class="alignnone size-full wp-image-228" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/articuno.gif" alt="articuno" width="150" height="150" class="alignnone size-full wp-image-229" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/elfoon.gif" alt="elfoon" width="150" height="150" class="alignnone size-full wp-image-232" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/hina_20110721.png" alt="hina_20110721" width="120" height="140" class="alignnone size-full wp-image-233" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/hina_20110804.gif" alt="hina_20110804" width="135" height="135" class="alignnone size-full wp-image-234" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/yuyuko.gif" alt="yuyuko" width="150" height="150" class="alignnone size-full wp-image-235" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/patchouli_.gif" alt="patchouli_" width="150" height="150" class="alignnone size-full wp-image-285" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/patchouli2.gif" alt="patchouli2" width="150" height="150" class="alignnone size-full wp-image-286" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/remi_flan.gif" alt="remi_flan" width="150" height="150" class="alignnone size-full wp-image-287" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/kantam03.gif" alt="kantam03" width="100" height="110" class="alignnone size-full wp-image-298" />
+</div>
+
+<div>
+<img src="http://manaten.net/wp-content/uploads/2013/04/articuno_anim_.gif" alt="articuno_anim_" width="48" height="48" class="alignnone size-full wp-image-230" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/arcanine_anim_.gif" alt="arcanine_anim_" width="48" height="48" class="alignnone size-full wp-image-231" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/elfoon_anim_.gif" alt="elfoon_anim_" width="48" height="48" class="alignnone size-full wp-image-293" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/glaceon_anim_.gif" alt="glaceon_anim_" width="48" height="48" class="alignnone size-full wp-image-294" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/gastrodon_anim_.gif" alt="gastrodon_anim_" width="48" height="48" class="alignnone size-full wp-image-295" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/gardevoir_anim_.gif" alt="gardevoir_anim_" width="48" height="48" class="alignnone size-full wp-image-296" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/quilava_anim_.gif" alt="quilava_anim_" width="48" height="48" class="alignnone size-full wp-image-299" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/charlotte.gif" alt="charlotte" width="48" height="48" class="alignnone size-full wp-image-292" />
+
+<img src="http://manaten.net/wp-content/uploads/2013/04/icon.gif" alt="icon" width="48" height="48" class="alignnone size-full wp-image-297" />
+</div>
+
+</body>
+</html>

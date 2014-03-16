@@ -1,0 +1,99 @@
+@charset "utf-8";
+@import "compass/css3/opacity";
+@mixin sprite($x, $y, $width, $height) {
+  width:  $width;
+  height: $height;
+  display: block;
+  overflow: hidden;
+  background-position: $x*-1 $y*-1;
+  text-indent: 1000%;
+  white-space: nowrap;
+}
+
+body div.pixelTip {
+  text-align: center;
+  z-index: 10;
+  color: #EEE;
+  font-size: 11px;
+  background-color: rgba(0,0,0,0.5);
+  padding: 4px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #777;
+  span {
+    margin: 0 2px;
+  }
+  span.width {
+    &:before { content: "w:"; }
+    &:after  { content: "px"; }
+  }
+  span.height {
+    &:before { content: "h:"; }
+    &:after  { content: "px"; }
+  }
+  span.size {
+    &:after  { content: "byte"; }
+  }
+  span.colorNum {
+    &:after  { content: "colors"; }
+  }
+  span.depth {
+    &:after  { content: "bit"; }
+  }
+  div.controll {
+    margin-bottom: 1px;
+    width: 100%;
+    height: 16px;
+    text-align: left;
+    vertical-align: middle;
+    button {
+      background-color: transparent;
+      background-image: inline-image("icons.gif");
+      background-repeat: no-repeat;
+      cursor: pointer;
+      margin: 0 2px;
+      border: 0;
+      padding: 0;
+      float: left;
+      &.zoomIn  { @include sprite(0, 0, 16px, 16px); }
+      &.zoomOut { @include sprite(16px, 0, 16px, 16px); }
+      &.bgColor { @include sprite(32px, 0, 16px, 16px); }
+      &.flipX   { @include sprite(48px, 0, 16px, 16px); }
+      &.flipY   { @include sprite(64px, 0, 16px, 16px); }
+      &.rotate  { @include sprite(80px, 0, 16px, 16px); }
+      &:hover   { @include opacity(0.7); }
+    }
+  }
+  div.container {
+    clear: both;
+    margin: 0 auto;
+    position: relative;
+    img {
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -o-crisp-edges;
+      image-rendering: -webkit-optimize-contrast;
+      -ms-interpolation-mode: nearest-neighbor;
+    }
+  }
+
+  table.palette {
+    margin: 0 auto;
+    border-collapse:collapse;
+    tr {
+      padding: 0;
+      margin: 0;
+    }
+    td {
+      width: 10px;
+      height: 9px;
+      border: solid 1px #EEE;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  div.color {
+    width: 50px;
+    padding: 2px;
+    margin: 0 auto;
+    border-left: 16px solid #000;
+  }
+}
