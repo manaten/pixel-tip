@@ -12,7 +12,8 @@ Pixel-Tip
 
 ## 利用方法
 
-表示を行いたいサイトで pixel-tip.css と dpixel-tip.js を読み込み、表示のためのイベントハンドラを設定します。これらのファイルのビルド済みのものは、本リポジトリのdstディレクトリ以下に有ります。
+表示を行いたいサイトで pixel-tip.css と dpixel-tip.js を読み込み、表示のためのイベントハンドラを設定します。
+これらのファイルのビルド済みのものは、本リポジトリのdstディレクトリ以下に有ります。
 
 ### 利用例
 ```html
@@ -41,6 +42,7 @@ $(function() {
 自身でビルドを行う場合、[Grunt](http://gruntjs.com/) と [Compass](http://compass-style.org/) が必要です。
 
 ```bash
+# install node packages.
 npm install
 
 # not minify build.
