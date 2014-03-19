@@ -1,5 +1,4 @@
 Pixel-Tip
-
 =====
 
 ## 概要
@@ -7,13 +6,14 @@ Pixel-Tip
 ブラウザでドット絵の情報を表示するためのライブラリです。
 動作には別途jQueryが必要です。
 
-### 利用例
+### 利用イメージ
 
-![利用例](http://manaten.net/wp-content/uploads/2013/04/ScreenClip2.png)
+![利用例](http://manaten.net/wp-content/uploads/2014/03/pixel-tip.png)
 
 ## 利用方法
 
-表示を行いたいサイトで pixel-tip.css と dpixel-tip.js を読み込み、表示のためのイベントハンドラを設定します。これらのファイルのビルド済みのものは、本リポジトリのdstディレクトリ以下に有ります。
+表示を行いたいサイトで pixel-tip.css と dpixel-tip.js を読み込み、表示のためのイベントハンドラを設定します。
+これらのファイルのビルド済みのものは、本リポジトリのdstディレクトリ以下に有ります。
 
 ### 利用例
 ```html
@@ -42,6 +42,7 @@ $(function() {
 自身でビルドを行う場合、[Grunt](http://gruntjs.com/) と [Compass](http://compass-style.org/) が必要です。
 
 ```bash
+# install node packages.
 npm install
 
 # not minify build.
