@@ -72,7 +72,7 @@ appendPaletteTable = ($tip, palette)->
     $tr = $ "<tr></tr>"
     for x in [0..15]
       offset = x + y * 16
-      (()=>
+      (=>
         if offset >= palette.length
           return
         color = "#" + palette[offset]
@@ -89,7 +89,7 @@ appendPaletteTable = ($tip, palette)->
 bgcolors = ["#FFF", "#FCC", "#CFC", "#CCF", "#F33", "#3F3", "#33F", "#FF3", "#3FF", "#F3F", "#000"]
 changeBGColor = (color)->
   if !color
-    @bgcolor = @bgcolor + 1 % bgcolors.length
+    @bgcolor = (@bgcolor + 1) % bgcolors.length
     color = bgcolors[@bgcolor]
   else
     @bgcolor = -1
@@ -118,7 +118,7 @@ flipY = ->
   setStyles.apply @
 
 rotate = ->
-  @rotate = @rotate + 1 % 4
+  @rotate = (@rotate + 1) % 4
   setStyles.apply @
 
 setStyles = ->

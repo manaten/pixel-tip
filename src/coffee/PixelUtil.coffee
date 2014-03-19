@@ -9,23 +9,14 @@ module.exports =
   #    It's first argument is object contains informations of image.
   #
   load: (url, callback)->
-    request = getXmlHttpObject()
+    request = new XMLHttpRequest()
+
     request.open 'GET', url, true
-    request.overrideMimeType 'text\/plain; charset=x-user-defined' if request.overrideMimeType
+    request.responseType = "arraybuffer"
     request.onload = =>
-      throw "Couldn't load image: #{url}" if request.status != 200
-      byteData = textToByteArray request.responseText
-      callback(new PixelImage url, byteData)
+      arrayBuffer = request.response
+      throw "Couldn't load image: #{url}" if !arrayBuffer
+      byteArray = new Uint8Array arrayBuffer
+      callback(new PixelImage url, byteArray)
+
     request.send null
-
-getXmlHttpObject = ->
-  if XMLHttpRequest? then new XMLHttpRequest() else new ActiveXObject('MSXML2.XMLHTTP.6.0')
-
-#
-# convert text to byte array.
-#
-textToByteArray = (text)->
-  byteArray = new Array text.length
-  for i in [0..text.length-1]
-    byteArray[i] = text.charCodeAt(i) & 0xff
-  byteArray
